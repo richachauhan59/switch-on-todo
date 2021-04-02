@@ -1,5 +1,6 @@
 import React from 'react'
 import TodoCard from './TodoCard'
+import TodoActionButton from './TodoActionButton'
 
 const TodoList = ({title, cards}) => {
     console.log(title)
@@ -10,19 +11,13 @@ const TodoList = ({title, cards}) => {
             <h4>{title}</h4>
             {
                 cards.map(item => (
-                    <TodoCard text={item.text} />
+                    <TodoCard key={item.id} text={item.text} />
                 ))
             }
-            {/* <TodoCard text="kuchhh bhi" /> */}
+            <TodoActionButton/>
         </div>
     )
 }
-
-{/* <h4>{title}</h4>
-            {cards.map(card => {
-                <TodoCard text={card.text} />
-            })} */}
-
 
 const styles = {
     container :{
@@ -30,6 +25,8 @@ const styles = {
         borderRadius: 3,
         width:300,
         padding:8,
+        height:"100%",
+        margin:8
     }
 }
 
